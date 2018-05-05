@@ -22,4 +22,8 @@ public class StaticCollisionResolver : GridCollisionResolver {
 
         return true;
     }
+
+    public override void StartedMoveInDirection( Vector3 moveDirection ) {
+        
+    }
 }

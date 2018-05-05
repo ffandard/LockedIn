@@ -16,7 +16,6 @@ public class ToggleSwitch : MonoBehaviour {
 	}
 
     public void Toggle() {
-        Debug.Log( "Was toggled" );
         canToggle = false;
     }
 

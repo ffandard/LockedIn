@@ -11,6 +11,7 @@ public class GridMover : MonoBehaviour {
     public Vector3 collisionTestOffset = new Vector3( 0.0f, 0.5f, 0.0f );
 
     public float moveSpeed = 0.15f;
+    private bool shouldMove = false;
 
     private Vector3 targetPosition = new Vector3();
 
@@ -21,22 +22,13 @@ public class GridMover : MonoBehaviour {
 	}
 	
 	void Update () {
-	    if ( targetPosition != transform.position ) {
+	    if ( IsMoving() ) {
             transform.position = Vector3.MoveTowards( transform.position, targetPosition, moveSpeed );
 
             if ( targetPosition == transform.position ) {
                 SnapToGrid();
+                shouldMove = false;
             }
-        }
-
-        if ( Input.GetKeyDown( KeyCode.I ) ) {
-            Move( new Vector3( 1.0f, 0.0f, 0.0f ) );
-        } else if ( Input.GetKeyDown( KeyCode.J ) ) {
-            Move( new Vector3( 0.0f, 0.0f, -1.0f ) );
-        } else if ( Input.GetKeyDown( KeyCode.K ) ) {
-            Move( new Vector3( -1.0f, 0.0f, 0.0f ) );
-        } else if ( Input.GetKeyDown( KeyCode.L ) ) {
-            Move( new Vector3( 0.0f, 0.0f, 1.0f ) );
         }
     }
 
@@ -50,9 +42,15 @@ public class GridMover : MonoBehaviour {
         targetPosition = transform.position;
     }
 
-    public void Move(Vector3 moveDirection) {
-        if ( transform.position == targetPosition && GetComponent<GridCollisionResolver>().CanMoveInDirection(moveDirection) ) {
-            targetPosition = targetPosition + moveDirection;
+    public void Move( Vector3 moveDirection ) {
+        if ( !shouldMove && GetComponent<GridCollisionResolver>().CanMoveInDirection(moveDirection) ) {
+            shouldMove = true;
+            targetPosition = transform.position + moveDirection;
+            GetComponent<GridCollisionResolver>().StartedMoveInDirection( moveDirection );
         }
+    }
+
+    public bool IsMoving() {
+        return shouldMove;
     }
 }

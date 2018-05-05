@@ -14,7 +14,7 @@ public class TestMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	    if ( Input.GetKeyDown( KeyCode.T ) ) {
-            GetComponent<GridMover>().Move( moveDirection );
+            GetComponent<GridMoveToMax>().Move( moveDirection );
         }
 	}
 }
