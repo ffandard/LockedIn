@@ -49,8 +49,20 @@ public class GridMover : MonoBehaviour {
     }
 
     public void Move(Vector3 moveDirection) {
-        if ( transform.position == targetPosition ) {
+        if ( transform.position == targetPosition && CanMoveInDirection(moveDirection) ) {
             targetPosition = targetPosition + moveDirection;
         }
+    }
+
+    private bool CanMoveInDirection(Vector3 moveDirection) {
+        RaycastHit[] hits = Physics.RaycastAll( transform.position, moveDirection, 1.0f );
+
+        for ( int i = 0; i < hits.Length; ++i ) {
+            if ( hits[i].transform.gameObject != gameObject ) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

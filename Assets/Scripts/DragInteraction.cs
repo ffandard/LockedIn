@@ -11,8 +11,6 @@ public class DragInteraction : MonoBehaviour {
     public float breakDistance = 5.0f;
     public float breakAngle = 0.5f;
 
-    public GameObject targeting = null;
-
     void Start () {
 		
 	}
@@ -22,7 +20,6 @@ public class DragInteraction : MonoBehaviour {
             Vector3 toObject = toMove.transform.position - transform.position;
             toObject.Normalize();
 
-            Debug.Log( Vector3.Dot( transform.forward, toObject ) );
             if ( Vector3.Distance( transform.position, toMove.transform.position ) > breakDistance || Vector3.Dot( transform.forward, toObject ) < breakAngle || Input.GetKeyUp( KeyCode.Mouse0 ) ) {
                 toMove = null;
             } else {
@@ -33,8 +30,6 @@ public class DragInteraction : MonoBehaviour {
                 Vector3 targetedPosition = transform.position + ( zeroedY * distanceTarget );
                 float xDiff = targetedPosition.x - toMove.transform.position.x;
                 float zDiff = targetedPosition.z - toMove.transform.position.z;
-
-                targeting.transform.position = targetedPosition;
 
                 if ( Mathf.Abs( xDiff ) > 0.5f ) {
                     if ( xDiff < 0 ) {
