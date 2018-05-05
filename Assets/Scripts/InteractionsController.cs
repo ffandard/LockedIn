@@ -30,6 +30,18 @@ public class InteractionsController : MonoBehaviour {
                         isDisplayingInstructions = true;
                         instructionalText = "Hold Left Mouse Button to move";
                     }
+                } else {
+                    // Try if this is a switch
+                    ToggleSwitch toggle = raycastHit.transform.gameObject.GetComponent<ToggleSwitch>();
+                    if ( toggle != null && toggle.CanBeToggled() ) {
+                        isDisplayingInstructions = true;
+                        instructionalText = "Press 'E' to activate";
+
+                        if ( Input.GetKeyDown( KeyCode.E ) ) {
+                            toggle.Toggle();
+                            isDisplayingInstructions = false;
+                        }
+                    }
                 }
             } else {
                 isDisplayingInstructions = false;
