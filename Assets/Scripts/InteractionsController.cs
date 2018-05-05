@@ -38,7 +38,7 @@ public class InteractionsController : MonoBehaviour {
                         instructionalText = "Press 'E' to activate";
 
                         if ( Input.GetKeyDown( KeyCode.E ) ) {
-                            toggle.Toggle();
+                            toggle.ActivateSwitch();
                             isDisplayingInstructions = false;
                         }
                     }

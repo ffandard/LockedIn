@@ -5,7 +5,6 @@ using UnityEngine;
 public class DragInteraction : MonoBehaviour {
     // This is the object that is being dragged
     private GridMover toMove = null;
-    private Vector3 initialPosition = new Vector3();
 
     public float distanceTarget = 1.5f;
     public float breakDistance = 5.0f;

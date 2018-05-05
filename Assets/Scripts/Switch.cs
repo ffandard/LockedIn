@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,12 +17,15 @@ public class Switch : MonoBehaviour {
 		
 	}
 
-    public void Toggle() {
+    public void ActivateSwitch() {
         isActive = !isActive;
 
         if ( ActivationHandler != null ) {
             ActivationHandler.OnActivated( this );
         }
+    }
+
+    private void NotifyActivation() {
     }
 
     public void SetAllowToggle( bool allow ) {
