@@ -8,24 +8,37 @@ public class InteractionsController : MonoBehaviour {
     private bool isDisplayingInstructions = false;
     private string instructionalText = "";
 
+    private DragInteraction dragger = null;
+
 	void Start () {
-		
+        dragger = GetComponent<DragInteraction>();
 	}
 	
 	void Update () {
-        int layerMask = ( 1 << LayerMask.NameToLayer( "Interactable" ) );
-        RaycastHit raycastHit;
+        if ( !IsInteracting() ) {
+            int layerMask = ( 1 << LayerMask.NameToLayer( "Interactable" ) );
+            RaycastHit raycastHit;
 
-        if ( Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out raycastHit, interactionDistance, layerMask ) ) {
-            GridMover mover = raycastHit.transform.gameObject.GetComponent<GridMover>();
-            // This is a cube that can be moved
-            if ( mover != null ) {
-                isDisplayingInstructions = !Input.GetKey( KeyCode.Mouse0 );
-                instructionalText = "Hold Left Mouse Button to move";
+            if ( Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out raycastHit, interactionDistance, layerMask ) ) {
+                GridMover mover = raycastHit.transform.gameObject.GetComponent<GridMover>();
+                // This is a cube that can be moved
+                if ( mover != null ) {
+                    if ( Input.GetKeyDown( KeyCode.Mouse0 ) ) {
+                        isDisplayingInstructions = false;
+                        dragger.SetObjectToMove( mover );
+                    } else {
+                        isDisplayingInstructions = true;
+                        instructionalText = "Hold Left Mouse Button to move";
+                    }
+                }
+            } else {
+                isDisplayingInstructions = false;
             }
-        } else {
-            isDisplayingInstructions = false;
         }
+    }
+
+    private bool IsInteracting() {
+        return dragger.IsDragging();
     }
 
     void OnGUI() {
