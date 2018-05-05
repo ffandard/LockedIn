@@ -55,10 +55,11 @@ public class GridMover : MonoBehaviour {
     }
 
     private bool CanMoveInDirection(Vector3 moveDirection) {
-        RaycastHit[] hits = Physics.RaycastAll( transform.position, moveDirection, 1.0f );
+        RaycastHit[] hits = Physics.RaycastAll( transform.position + new Vector3( 0.0f, 0.5f, 0.0f ), moveDirection, 1.0f );
 
         for ( int i = 0; i < hits.Length; ++i ) {
             if ( hits[i].transform.gameObject != gameObject ) {
+                Debug.Log( "Hitting " + hits[i].transform.gameObject.name );
                 return false;
             }
         }
