@@ -8,6 +8,8 @@ public class GridMover : MonoBehaviour {
     public float ySnapCoodrinate = 0.5f;
     public float zSnapCoordinate = 0.5f;
 
+    public Vector3 collisionTestOffset = new Vector3( 0.0f, 0.5f, 0.0f );
+
     public float moveSpeed = 0.15f;
 
     private Vector3 targetPosition = new Vector3();
@@ -49,21 +51,8 @@ public class GridMover : MonoBehaviour {
     }
 
     public void Move(Vector3 moveDirection) {
-        if ( transform.position == targetPosition && CanMoveInDirection(moveDirection) ) {
+        if ( transform.position == targetPosition && GetComponent<GridCollisionResolver>().CanMoveInDirection(moveDirection) ) {
             targetPosition = targetPosition + moveDirection;
         }
-    }
-
-    private bool CanMoveInDirection(Vector3 moveDirection) {
-        RaycastHit[] hits = Physics.RaycastAll( transform.position + new Vector3( 0.0f, 0.5f, 0.0f ), moveDirection, 1.0f );
-
-        for ( int i = 0; i < hits.Length; ++i ) {
-            if ( hits[i].transform.gameObject != gameObject ) {
-                Debug.Log( "Hitting " + hits[i].transform.gameObject.name );
-                return false;
-            }
-        }
-
-        return true;
     }
 }

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 33435330737801682}
   - component: {fileID: 114426980220986232}
   - component: {fileID: 64991625884153130}
+  - component: {fileID: 114340262058603168}
   m_Layer: 0
   m_Name: Pillar_2
   m_TagString: Untagged
@@ -70,7 +71,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -111,6 +112,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
+--- !u!114 &114340262058603168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337467422709912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d61b9a5f162da4193f7579b344c814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSnapCoodrinate: 0
+  ySnapCoodrinate: 0
+  zSnapCoordinate: 0.5
+  moveSpeed: 0.15
 --- !u!114 &114426980220986232
 MonoBehaviour:
   m_ObjectHideFlags: 1

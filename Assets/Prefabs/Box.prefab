@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 64429519743156404}
   - component: {fileID: 65498640188405212}
   - component: {fileID: 114408957902051518}
+  - component: {fileID: 114592076086441726}
   m_Layer: 8
   m_Name: Box
   m_TagString: Untagged
@@ -127,6 +128,7 @@ MonoBehaviour:
   xSnapCoodrinate: 0
   ySnapCoodrinate: 0
   zSnapCoordinate: 0.5
+  collisionTestOffset: {x: 0, y: 0.5, z: 0}
   moveSpeed: 0.15
 --- !u!114 &114571309055830356
 MonoBehaviour:
@@ -140,6 +142,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
+--- !u!114 &114592076086441726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497357993453268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80a7e52d7cc2a34eb1909f61768baeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114865119939086472
 MonoBehaviour:
   m_ObjectHideFlags: 1
