@@ -2524,7 +2524,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -9424,7 +9424,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -16232,7 +16232,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-4565728
+  m_Name: pb_Mesh-577676
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -16362,7 +16362,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2478946
+  m_Name: pb_Mesh-577752
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -23354,7 +23354,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -23578,7 +23578,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2560768
+  m_Name: pb_Mesh-577750
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -27263,7 +27263,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-3950152
+  m_Name: pb_Mesh40668
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -30923,7 +30923,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1220
+  m_Name: pb_Mesh-577736
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -37823,7 +37823,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-3948644
+  m_Name: pb_Mesh40796
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -37953,7 +37953,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-3947414
+  m_Name: pb_Mesh40702
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -38087,7 +38087,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4743801057460266, guid: 35e989656e9a92b44b7d2a7f96b20b7d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: 3.002
       objectReference: {fileID: 0}
     - target: {fileID: 4743801057460266, guid: 35e989656e9a92b44b7d2a7f96b20b7d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -38130,6 +38130,11 @@ Prefab:
     - target: {fileID: 1497357993453268, guid: 35e989656e9a92b44b7d2a7f96b20b7d, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114408957902051518, guid: 35e989656e9a92b44b7d2a7f96b20b7d,
+        type: 2}
+      propertyPath: xSnapCoodrinate
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35e989656e9a92b44b7d2a7f96b20b7d, type: 2}
@@ -72433,7 +72438,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh11956
+  m_Name: pb_Mesh-577646
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -79425,7 +79430,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -84298,7 +84303,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh11940
+  m_Name: pb_Mesh40652
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -85088,7 +85093,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1206
+  m_Name: pb_Mesh-577706
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -85302,7 +85307,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-4564108
+  m_Name: pb_Mesh-577720
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
