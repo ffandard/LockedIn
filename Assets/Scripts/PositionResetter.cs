@@ -7,6 +7,9 @@ public class PositionResetter : MonoBehaviour {
     private bool resetPostion = false;
     private GridMover mover;
 
+    public delegate void OnReset();
+    public OnReset WasReset;
+
     void Start() {
         mover = GetComponent<GridMover>();
     }
@@ -16,7 +19,10 @@ public class PositionResetter : MonoBehaviour {
             transform.position = Vector3.MoveTowards( transform.position, targetPosition, mover.moveSpeed );
 
             if ( transform.position == targetPosition ) {
-                Debug.Log( "Finish reset" );
+                if ( WasReset != null ) {
+                    WasReset();
+                }
+
                 resetPostion = false;
             }
         }

@@ -22,7 +22,7 @@ public class GridMover : MonoBehaviour {
 	}
 	
 	void Update () {
-	    if ( IsMoving() ) {
+	    if ( shouldMove ) {
             transform.position = Vector3.MoveTowards( transform.position, targetPosition, moveSpeed );
 
             if ( targetPosition == transform.position ) {
@@ -42,15 +42,59 @@ public class GridMover : MonoBehaviour {
         targetPosition = transform.position;
     }
 
-    public void Move( Vector3 moveDirection ) {
-        if ( !shouldMove && GetComponent<GridCollisionResolver>().CanMoveInDirection(moveDirection) ) {
+    public void Move( Vector3 moveDirection, bool pushAdjecent ) {
+        if ( !shouldMove && CanMoveInDirection( moveDirection, pushAdjecent ) ) {
             shouldMove = true;
             targetPosition = transform.position + moveDirection;
-            GetComponent<GridCollisionResolver>().StartedMoveInDirection( moveDirection );
+            StartedMoveInDirection( moveDirection, pushAdjecent );
         }
     }
 
     public bool IsMoving() {
         return shouldMove;
+    }
+
+    public bool CanMoveInDirection( Vector3 moveDirection, bool pushAdjecent ) {
+        // Calculate ray start based off move direction and collider size
+        RaycastHit[] hits = GetCollisionsInPath( moveDirection );
+
+        for ( int i = 0; i < hits.Length; ++i ) {
+            if ( hits[i].transform.gameObject != gameObject ) {
+                GridMover mover = hits[i].transform.gameObject.GetComponent<GridMover>();
+
+                if ( mover != null && pushAdjecent && mover.CanMoveInDirection( moveDirection, pushAdjecent ) ) {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public RaycastHit[] GetCollisionsInPath( Vector3 moveDirection ) {
+        Bounds colliderBounds = GetComponent<Collider>().bounds;
+        Vector3 rayStartPosition = colliderBounds.center;
+
+        rayStartPosition.x += ( moveDirection.x * ( colliderBounds.extents.x - 0.04f ) );
+        rayStartPosition.y += ( moveDirection.y * ( colliderBounds.extents.y - 0.04f ) );
+        rayStartPosition.z += ( moveDirection.z * ( colliderBounds.extents.z - 0.04f ) );
+
+        return Physics.RaycastAll( rayStartPosition, moveDirection, 1.0f );
+    }
+
+    public void StartedMoveInDirection( Vector3 moveDirection, bool pushAdjecent ) {
+        RaycastHit[] hits = GetCollisionsInPath( moveDirection );
+
+        for ( int i = 0; i < hits.Length; ++i ) {
+            if ( hits[i].transform.gameObject != gameObject ) {
+                GridMover mover = hits[i].transform.gameObject.GetComponent<GridMover>();
+
+                if ( mover != null ) {
+                    mover.Move( moveDirection, pushAdjecent );
+                }
+            }
+        }
     }
 }
