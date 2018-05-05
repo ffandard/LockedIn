@@ -5,7 +5,6 @@ using UnityEngine;
 public class DragInteraction : MonoBehaviour {
     // This is the object that is being dragged
     private GridMover toMove = null;
-    private Vector3 initialPosition = new Vector3();
 
     public float distanceTarget = 1.5f;
     public float breakDistance = 5.0f;
@@ -33,15 +32,15 @@ public class DragInteraction : MonoBehaviour {
 
                 if ( Mathf.Abs( xDiff ) > 0.5f ) {
                     if ( xDiff < 0 ) {
-                        toMove.Move( Vector3.left );
+                        toMove.Move( Vector3.left, false );
                     } else {
-                        toMove.Move( Vector3.right );
+                        toMove.Move( Vector3.right, false );
                     }
                 } else if ( Mathf.Abs( zDiff ) > 0.5f ) {
                     if ( zDiff < 0 ) {
-                        toMove.Move( Vector3.back );
+                        toMove.Move( Vector3.back, false );
                     } else {
-                        toMove.Move( Vector3.forward );
+                        toMove.Move( Vector3.forward, false );
                     }
                 }
             }

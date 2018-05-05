@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 114426980220986232}
   - component: {fileID: 64991625884153130}
   - component: {fileID: 114340262058603168}
+  - component: {fileID: 114478450664467622}
+  - component: {fileID: 114923561815301100}
   m_Layer: 0
   m_Name: Pillar_2
   m_TagString: Untagged
@@ -126,7 +128,8 @@ MonoBehaviour:
   xSnapCoodrinate: 0
   ySnapCoodrinate: 0
   zSnapCoordinate: 0.5
-  moveSpeed: 0.15
+  collisionTestOffset: {x: 0, y: 0.5, z: 0}
+  moveSpeed: 0.07
 --- !u!114 &114426980220986232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2817,3 +2820,25 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114478450664467622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337467422709912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80a7e52d7cc2a34eb1909f61768baeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114923561815301100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337467422709912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6743c4b210e355e45ae0a50e664d3f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -8,9 +8,12 @@ public class GridMover : MonoBehaviour {
     public float ySnapCoodrinate = 0.5f;
     public float zSnapCoordinate = 0.5f;
 
+    public bool ignoreY = false;
+
     public Vector3 collisionTestOffset = new Vector3( 0.0f, 0.5f, 0.0f );
 
     public float moveSpeed = 0.15f;
+    private bool shouldMove = false;
 
     private Vector3 targetPosition = new Vector3();
 
@@ -21,38 +24,84 @@ public class GridMover : MonoBehaviour {
 	}
 	
 	void Update () {
-	    if ( targetPosition != transform.position ) {
+	    if ( shouldMove ) {
             transform.position = Vector3.MoveTowards( transform.position, targetPosition, moveSpeed );
 
             if ( targetPosition == transform.position ) {
                 SnapToGrid();
+                shouldMove = false;
             }
-        }
-
-        if ( Input.GetKeyDown( KeyCode.I ) ) {
-            Move( new Vector3( 1.0f, 0.0f, 0.0f ) );
-        } else if ( Input.GetKeyDown( KeyCode.J ) ) {
-            Move( new Vector3( 0.0f, 0.0f, -1.0f ) );
-        } else if ( Input.GetKeyDown( KeyCode.K ) ) {
-            Move( new Vector3( -1.0f, 0.0f, 0.0f ) );
-        } else if ( Input.GetKeyDown( KeyCode.L ) ) {
-            Move( new Vector3( 0.0f, 0.0f, 1.0f ) );
         }
     }
 
     private void SnapToGrid() {
         transform.position = new Vector3(
             Mathf.Sign( transform.position.x ) * ( Mathf.Abs( ( int )transform.position.x ) + xSnapCoodrinate ),
-            Mathf.Sign( transform.position.y ) * ( Mathf.Abs( ( int )transform.position.y ) + ySnapCoodrinate),
+            ignoreY ? transform.position.y : Mathf.Sign( transform.position.y ) * ( Mathf.Abs( ( int )transform.position.y ) + ySnapCoodrinate),
             Mathf.Sign( transform.position.z ) * ( Mathf.Abs( ( int )transform.position.z ) + zSnapCoordinate )
         );
 
         targetPosition = transform.position;
     }
 
-    public void Move(Vector3 moveDirection) {
-        if ( transform.position == targetPosition && GetComponent<GridCollisionResolver>().CanMoveInDirection(moveDirection) ) {
-            targetPosition = targetPosition + moveDirection;
+    public void Move( Vector3 moveDirection, bool pushAdjecent ) {
+        if ( !shouldMove && CanMoveInDirection( moveDirection, pushAdjecent ) ) {
+            shouldMove = true;
+            targetPosition = transform.position + moveDirection;
+            StartedMoveInDirection( moveDirection, pushAdjecent );
+
+            MatchGround matchGround = GetComponent<MatchGround>();
+            if ( matchGround != null ) {
+                matchGround.WillMoveTo( targetPosition );
+            }
+        }
+    }
+
+    public bool IsMoving() {
+        return shouldMove;
+    }
+
+    public bool CanMoveInDirection( Vector3 moveDirection, bool pushAdjecent ) {
+        // Calculate ray start based off move direction and collider size
+        RaycastHit[] hits = GetCollisionsInPath( moveDirection );
+
+        for ( int i = 0; i < hits.Length; ++i ) {
+            if ( hits[i].transform.gameObject != gameObject ) {
+                GridMover mover = hits[i].transform.gameObject.GetComponent<GridMover>();
+
+                if ( mover != null && pushAdjecent && mover.CanMoveInDirection( moveDirection, pushAdjecent ) ) {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public RaycastHit[] GetCollisionsInPath( Vector3 moveDirection ) {
+        Bounds colliderBounds = GetComponent<Collider>().bounds;
+        Vector3 rayStartPosition = colliderBounds.center;
+
+        rayStartPosition.x += ( moveDirection.x * ( colliderBounds.extents.x - 0.04f ) );
+        rayStartPosition.y += ( moveDirection.y * ( colliderBounds.extents.y - 0.04f ) );
+        rayStartPosition.z += ( moveDirection.z * ( colliderBounds.extents.z - 0.04f ) );
+
+        return Physics.RaycastAll( rayStartPosition, moveDirection, 1.0f );
+    }
+
+    public void StartedMoveInDirection( Vector3 moveDirection, bool pushAdjecent ) {
+        RaycastHit[] hits = GetCollisionsInPath( moveDirection );
+
+        for ( int i = 0; i < hits.Length; ++i ) {
+            if ( hits[i].transform.gameObject != gameObject ) {
+                GridMover mover = hits[i].transform.gameObject.GetComponent<GridMover>();
+
+                if ( mover != null ) {
+                    mover.Move( moveDirection, pushAdjecent );
+                }
+            }
         }
     }
 }

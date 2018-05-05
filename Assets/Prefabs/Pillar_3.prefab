@@ -24,6 +24,9 @@ GameObject:
   - component: {fileID: 33793461026254390}
   - component: {fileID: 114567692346842452}
   - component: {fileID: 64660857006576046}
+  - component: {fileID: 114239299627884030}
+  - component: {fileID: 114037416341609604}
+  - component: {fileID: 114810348743788200}
   m_Layer: 0
   m_Name: Pillar_3
   m_TagString: Untagged
@@ -70,7 +73,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -99,6 +102,33 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!114 &114037416341609604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1785899180733248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d61b9a5f162da4193f7579b344c814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSnapCoodrinate: 0
+  ySnapCoodrinate: 0
+  zSnapCoordinate: 0.5
+  collisionTestOffset: {x: 0, y: 0.5, z: 0}
+  moveSpeed: 0.07
+--- !u!114 &114239299627884030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1785899180733248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80a7e52d7cc2a34eb1909f61768baeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114532581732731060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2805,3 +2835,14 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114810348743788200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1785899180733248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6743c4b210e355e45ae0a50e664d3f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
