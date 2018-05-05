@@ -35,7 +35,7 @@ public class PushCollisionResolver : GridCollisionResolver {
 
     public override void StartedMoveInDirection( Vector3 moveDirection ) {
         RaycastHit[] hits = GetCollisionsInPath( moveDirection );
-        Debug.Log( "Called started move" + moveDirection.ToString() );
+
         for ( int i = 0; i < hits.Length; ++i ) {
             if ( hits[i].transform.gameObject != gameObject ) {
                 GridMover mover = hits[i].transform.gameObject.GetComponent<GridMover>();

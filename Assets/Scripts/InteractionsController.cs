@@ -32,7 +32,7 @@ public class InteractionsController : MonoBehaviour {
                     }
                 } else {
                     // Try if this is a switch
-                    ToggleSwitch toggle = raycastHit.transform.gameObject.GetComponent<ToggleSwitch>();
+                    Switch toggle = raycastHit.transform.gameObject.GetComponent<Switch>();
                     if ( toggle != null && toggle.CanBeToggled() ) {
                         isDisplayingInstructions = true;
                         instructionalText = "Press 'E' to activate";

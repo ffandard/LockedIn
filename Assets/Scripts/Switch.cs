@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleSwitch : MonoBehaviour {
+public class Switch : MonoBehaviour {
     public ButtonActivation ActivationHandler;
 
     private bool canToggle = true;
+    private bool isActive = false;
 
     void Start () {
 		
@@ -16,7 +17,15 @@ public class ToggleSwitch : MonoBehaviour {
 	}
 
     public void Toggle() {
-        canToggle = false;
+        isActive = !isActive;
+
+        if ( ActivationHandler != null ) {
+            ActivationHandler.OnActivated( this );
+        }
+    }
+
+    public void SetAllowToggle( bool allow ) {
+        canToggle = allow;
     }
 
     public bool CanBeToggled() {
