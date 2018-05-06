@@ -17,6 +17,14 @@ MonoBehaviour:
   - pbUVMaterialPreview
   - pbIconGUI
   - pbShowMover
+  - pbObjExportRightHanded
+  - pbObjApplyTransform
+  - pbObjExportCopyTextures
+  - pbObjExportVertexColors
+  - pbObjTextureOffsetScale
+  - pbObjQuads
+  - pb_SmoothingGroupEditor::m_ShowPreview
+  - pb_SmoothingGroupEditor::m_DrawNormals
   m_Int_keys:
   - pbDefaultEditLevel
   - pbHandleAlignment
@@ -25,6 +33,7 @@ MonoBehaviour:
   - pbDragSelectMode
   - pbVertexColorTool
   - pbExtrudeMethod
+  - pbDefaultExportFormat
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
@@ -39,8 +48,8 @@ MonoBehaviour:
   - pbVertexColorPrefs8
   m_Color_keys: []
   m_Material_keys: []
-  m_Bool_values: 0101010001
-  m_Int_values: 00000000000000000100000001000000000000000000000001000000
+  m_Bool_values: 01010100010101010000010000
+  m_Int_values: 0000000000000000020000000100000000000000000000000100000000000000
   m_Float_values:
   - 0
   - 0
