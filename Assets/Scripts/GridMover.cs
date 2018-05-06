@@ -78,6 +78,17 @@ public class GridMover : MonoBehaviour {
             }
         }
 
+        // Make sure if somethis is stacked on top of this and it's being dragged that it doesn't do stuff
+        if ( !pushAdjecent ) {
+            hits = Physics.RaycastAll( transform.position, Vector3.up, 1.0f );
+
+            for ( int i = 0; i < hits.Length; ++i ) {
+                if ( hits[i].transform.gameObject != gameObject ) {
+                    return false;
+                }
+            }
+        }
+
         return true;
     }
 
