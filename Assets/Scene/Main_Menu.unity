@@ -145,7 +145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 265}
+  m_AnchoredPosition: {x: 0, y: 153}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &160977183
@@ -242,7 +242,7 @@ Prefab:
     - target: {fileID: 224333888642267162, guid: 122151f4bb42dc5439064fb63aeda3dc,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 10
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 224333888642267162, guid: 122151f4bb42dc5439064fb63aeda3dc,
         type: 2}
@@ -292,6 +292,11 @@ Prefab:
     - target: {fileID: 1187586525752130, guid: 122151f4bb42dc5439064fb63aeda3dc, type: 2}
       propertyPath: m_Name
       value: New Game Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 114269299638514282, guid: 122151f4bb42dc5439064fb63aeda3dc,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 122151f4bb42dc5439064fb63aeda3dc, type: 2}
@@ -669,7 +674,7 @@ Prefab:
     - target: {fileID: 224333888642267162, guid: 122151f4bb42dc5439064fb63aeda3dc,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -145
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 224333888642267162, guid: 122151f4bb42dc5439064fb63aeda3dc,
         type: 2}
@@ -694,6 +699,11 @@ Prefab:
     - target: {fileID: 224333888642267162, guid: 122151f4bb42dc5439064fb63aeda3dc,
         type: 2}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114269299638514282, guid: 122151f4bb42dc5439064fb63aeda3dc,
+        type: 2}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
