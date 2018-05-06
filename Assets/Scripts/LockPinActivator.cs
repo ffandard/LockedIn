@@ -14,7 +14,7 @@ public class LockPinActivator : ButtonActivation {
 
     public delegate void OnFailedUnlock();
     public OnFailedUnlock FailedUnlock;
-
+    
     private int pinsDropped = 0;
     private bool isUnlocked = false;
     
@@ -32,17 +32,7 @@ public class LockPinActivator : ButtonActivation {
 
         Pillars[0].GetComponent<PositionResetter>().WasReset += () => GetComponent<Switch>().SetAllowToggle( true );
     }
-
-    private void Update() {
-        if ( Input.GetKeyDown( KeyCode.P ) ) {
-            DropPins();
-        }
-
-        if ( Input.GetKeyDown( KeyCode.R ) ) {
-            ResetLock();
-        }
-    }
-
+    
     private void DropPins() {
         if ( !isUnlocked ) {
             for (int i = 0; i < Pistons.Length; ++i) {
@@ -70,8 +60,10 @@ public class LockPinActivator : ButtonActivation {
             pinsDropped = 0;
             isUnlocked = IsUnlocked();
 
-            if ( isUnlocked && (Unlocked != null) ) {
-                Unlocked();
+            if ( isUnlocked ) {
+                if (Unlocked != null ) {
+                    Unlocked();
+                }
             }
             else {
                 Invoke("ResetLock", dropDelay);
@@ -89,7 +81,7 @@ public class LockPinActivator : ButtonActivation {
         for ( int i = 0; i < Pillars.Length; ++i ) {
             GameObject pillar = Pillars[i];
             float unlockStep = UnlockCombination[i];
-            if ( Math.Abs(pillar.transform.position.y - unlockStep) < 0.5f ) {
+            if ( Math.Abs(pillar.transform.position.y - unlockStep) > 0.1f ) {
                 result = false;
                 break;
             }
