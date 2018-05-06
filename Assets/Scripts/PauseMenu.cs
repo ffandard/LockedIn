@@ -10,10 +10,9 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (!isPaused && Input.GetButtonDown("Pause"))
+        if (Input.GetButtonDown("Pause"))
         {
-            Debug.Log("YOLO");
-            TogglePause(true);
+            TogglePause(!isPaused);
         }
     }
 
@@ -39,7 +38,6 @@ public class PauseMenu : MonoBehaviour
 
     public void TogglePause(bool pause)
     {
-        Debug.Log("TogglePause:" + pause);
         isPaused = pause;
         Cursor.visible = pause;
         pauseMenuContainer.SetActive(pause);

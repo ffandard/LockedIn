@@ -7,18 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public void LoadGame()
     {
-        StartCoroutine(LoadGameAsync());
-    }
-
-    public IEnumerator LoadGameAsync()
-    {
-        AsyncOperation asyncGame = SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
-        AsyncOperation asyncPauseMenu = SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
-
-        while (!asyncGame.isDone && !asyncPauseMenu.isDone)
-        {
-            yield return null;
-        }
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(2, LoadSceneMode.Additive);
     }
 
     public void QuitGame()
