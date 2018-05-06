@@ -20,6 +20,10 @@ public class InteractionsController : MonoBehaviour {
             RaycastHit raycastHit;
 
             if ( Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out raycastHit, interactionDistance, layerMask ) ) {
+				InteractibleHighlight highlight = raycastHit.transform.gameObject.GetComponent<InteractibleHighlight> ();
+				if (highlight != null) {
+					highlight.Highlight ();
+				}
                 GridMover mover = raycastHit.transform.gameObject.GetComponent<GridMover>();
                 // This is a cube that can be moved
                 if ( mover != null ) {

@@ -4,9 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BeamActivator : ButtonActivation {
+	public Animator animator;
+	public string triggerString;
     public GridMoveToMax targetBeam;
     public Vector3 moveDirection;
     public PositionResetter resetter;
+
 
     private Switch targetSwitch;
     private bool beamExtended = false;
@@ -26,6 +29,8 @@ public class BeamActivator : ButtonActivation {
     }
 
     public override void OnActivated( Switch source ) {
+		animator.SetTrigger (triggerString);
+
         targetSwitch = source;
         source.SetAllowToggle( false );
 
