@@ -41416,7 +41416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a55aa8f4ed83147a60f2dd3ff75374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceTarget: 1.5
+  distanceTarget: 2
   breakDistance: 5
   breakAngle: 0.5
 --- !u!43 &957699814
@@ -78025,7 +78025,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2430
+  m_Name: pb_Mesh-125952
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -90472,7 +90472,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2490
+  m_Name: pb_Mesh19086
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
