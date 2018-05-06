@@ -6,6 +6,9 @@ using UnityEngine;
 public class Switch : MonoBehaviour {
     public ButtonActivation ActivationHandler;
 
+    public delegate void SwitchPressed();
+    public SwitchPressed OnSwitchPressed;
+
     private bool canToggle = true;
     private bool isActive = false;
 
@@ -22,6 +25,10 @@ public class Switch : MonoBehaviour {
 
         if ( ActivationHandler != null ) {
             ActivationHandler.OnActivated( this );
+        }
+
+        if ( OnSwitchPressed != null ) {
+            OnSwitchPressed();
         }
     }
 
