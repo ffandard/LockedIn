@@ -37,4 +37,12 @@ public class BeamActivator : ButtonActivation {
         }
         beamExtended = !beamExtended;
     }
+
+	public void Reset()
+	{
+		if (beamExtended) {
+			resetter.DoReset ();
+		}
+		beamExtended = false;
+	}
 }
