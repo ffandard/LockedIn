@@ -34,12 +34,14 @@ public class InteractionsController : MonoBehaviour {
                     // Try if this is a switch
                     Switch toggle = raycastHit.transform.gameObject.GetComponent<Switch>();
                     if ( toggle != null && toggle.CanBeToggled() ) {
-                        isDisplayingInstructions = true;
-                        instructionalText = "Press 'E' to activate";
+                        if ( Vector3.Dot( toggle.gameObject.transform.forward, transform.forward ) > 0.0f ) {
+                            isDisplayingInstructions = true;
+                            instructionalText = "Press 'E' to activate";
 
-                        if ( Input.GetKeyDown( KeyCode.E ) ) {
-                            toggle.ActivateSwitch();
-                            isDisplayingInstructions = false;
+                            if ( Input.GetKeyDown( KeyCode.E ) ) {
+                                toggle.ActivateSwitch();
+                                isDisplayingInstructions = false;
+                            }
                         }
                     }
                 }
