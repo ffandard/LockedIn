@@ -22,11 +22,7 @@ public class DragInteraction : MonoBehaviour {
             if ( Vector3.Distance( transform.position, toMove.transform.position ) > breakDistance || Vector3.Dot( transform.forward, toObject ) < breakAngle || Input.GetKeyUp( KeyCode.Mouse0 ) ) {
                 toMove = null;
             } else {
-                // Figure out if this thing needs to move
-                Vector3 zeroedY = new Vector3( transform.forward.x, 0.0f, transform.forward.z );
-                zeroedY.Normalize();
-
-                Vector3 targetedPosition = transform.position + ( zeroedY * distanceTarget );
+				Vector3 targetedPosition = transform.position + ( transform.forward * distanceTarget );
                 float xDiff = targetedPosition.x - toMove.transform.position.x;
                 float zDiff = targetedPosition.z - toMove.transform.position.z;
 

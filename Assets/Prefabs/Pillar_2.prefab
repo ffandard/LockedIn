@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 16342205, guid: 0472bdc8d6d15384d98f22ee34302f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entityType: 0
+  _entityType: 4
 --- !u!114 &114340262058603168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +129,7 @@ MonoBehaviour:
   zSnapCoordinate: 0.5
   ignoreY: 0
   moveSpeed: 0.07
+  test: {fileID: 0}
 --- !u!114 &114426980220986232
 MonoBehaviour:
   m_ObjectHideFlags: 1

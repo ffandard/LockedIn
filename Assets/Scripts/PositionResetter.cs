@@ -24,6 +24,9 @@ public class PositionResetter : MonoBehaviour {
                 }
 
                 resetPostion = false;
+                transform.position = targetPosition;
+                GetComponent<GridMover>().SnapToGrid();
+
             }
         }
     }

@@ -6,6 +6,9 @@ public class LockMechanism : MonoBehaviour {
     public LockPinActivator lockPinActivator;
     public Animator lockAnimator;
 
+    public Transform reparentTarget;
+    public GameObject[] parentOnSuccess;
+
     private void Start()
     {
         lockPinActivator.FailedUnlock += FailedUnlock;
@@ -14,6 +17,10 @@ public class LockMechanism : MonoBehaviour {
 
     public void Unlocked()
     {
+        for ( int i = 0; i < parentOnSuccess.Length; ++i ) {
+            parentOnSuccess[i].transform.parent = reparentTarget;
+        }
+
         lockAnimator.SetTrigger("Open");
     }
 
