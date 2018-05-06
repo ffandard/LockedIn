@@ -28,6 +28,9 @@ public class InteractionsController : MonoBehaviour {
                 // This is a cube that can be moved
                 if ( mover != null ) {
                     if ( Input.GetKeyDown( KeyCode.Mouse0 ) ) {
+						if (highlight != null) {
+							highlight.Highlight ();
+						}
                         isDisplayingInstructions = false;
                         dragger.SetObjectToMove( mover );
                     } else {
