@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class LockPinActivator : ButtonActivation {
     public GameObject[] Pistons;
     public GameObject[] Pillars;
+    public float[] UnlockCombination;
 
     public float dropDelay = 1.0f;
     
@@ -37,5 +39,20 @@ public class LockPinActivator : ButtonActivation {
             Pistons[i].GetComponent<PositionResetter>().DoReset();
             Pillars[i].GetComponent<PositionResetter>().DoReset();
         }
+    }
+
+    public bool IsUnlocked() {
+        bool result = true;
+
+        for (int i = 0; i < Pillars.Length; ++i) {
+            GameObject pillar = Pillars[i];
+            float unlockStep = UnlockCombination[i];
+            if (Math.Abs(pillar.transform.position.y - unlockStep) < 0.5) {
+                result = false;
+                break;
+            }
+        }
+
+        return result;
     }
 }

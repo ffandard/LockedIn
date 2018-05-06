@@ -41416,7 +41416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a55aa8f4ed83147a60f2dd3ff75374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceTarget: 1.5
+  distanceTarget: 2
   breakDistance: 5
   breakAngle: 0.5
 --- !u!43 &957699814
@@ -41620,7 +41620,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2390
+  m_Name: pb_Mesh19366
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -78025,7 +78025,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2430
+  m_Name: pb_Mesh-125952
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -78155,7 +78155,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh12838
+  m_Name: pb_Mesh19278
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -89932,7 +89932,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh12676
+  m_Name: pb_Mesh19088
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -90472,7 +90472,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2490
+  m_Name: pb_Mesh19086
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -90732,7 +90732,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2410
+  m_Name: pb_Mesh19370
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -90862,7 +90862,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2450
+  m_Name: pb_Mesh19272
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -91122,7 +91122,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2510
+  m_Name: pb_Mesh19170
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -91299,7 +91299,7 @@ GameObject:
   - component: {fileID: 2033649465}
   - component: {fileID: 2033649466}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91368,6 +91368,12 @@ MonoBehaviour:
   - {fileID: 545776891}
   - {fileID: 2036309}
   - {fileID: 1652997341}
+  UnlockCombination:
+  - 0
+  - 0
+  - 1
+  - 0
+  - 2
   dropDelay: 1
 --- !u!43 &2035108469
 Mesh:
