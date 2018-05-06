@@ -14,7 +14,7 @@ public class GridMover : MonoBehaviour {
     private bool shouldMove = false;
 
     private Vector3 targetPosition = new Vector3();
-    private Vector3 targetUp = new Vector3();
+    private Vector3 targetUp = Vector3.zero;
 
     void Start () {
         SnapToGrid();
@@ -25,7 +25,10 @@ public class GridMover : MonoBehaviour {
 	void Update () {
 	    if ( shouldMove ) {
             transform.position = Vector3.MoveTowards( transform.position, targetPosition, moveSpeed );
-            transform.up = Vector3.MoveTowards( transform.up, targetUp, moveSpeed );
+
+            if ( targetUp != Vector3.zero ) {
+                transform.up = Vector3.MoveTowards( transform.up, targetUp, moveSpeed );
+            }
 
             if ( targetPosition == transform.position ) {
                 SnapToGrid();
@@ -45,6 +48,8 @@ public class GridMover : MonoBehaviour {
     }
 
     public void Move( Vector3 moveDirection, bool pushAdjecent ) {
+        moveDirection = transform.TransformDirection( moveDirection );
+
         if ( !shouldMove && CanMoveInDirection( moveDirection, pushAdjecent ) ) {
             shouldMove = true;
             targetPosition = transform.position + moveDirection;
@@ -70,7 +75,7 @@ public class GridMover : MonoBehaviour {
             if ( hits[i].transform.gameObject != gameObject ) {
                 GridMover mover = hits[i].transform.gameObject.GetComponent<GridMover>();
 
-                if ( mover != null && pushAdjecent && mover.CanMoveInDirection( moveDirection, pushAdjecent ) ) {
+                if ( mover != null && pushAdjecent && mover.CanMoveInDirection( moveDirection, pushAdjecent ) && mover.GetComponent<GridMoveToMax>() == null ) {
                     return true;
                 }
 
@@ -100,12 +105,12 @@ public class GridMover : MonoBehaviour {
         rayStartPosition.y += ( moveDirection.y * ( colliderBounds.extents.y - 0.04f ) );
         rayStartPosition.z += ( moveDirection.z * ( colliderBounds.extents.z - 0.04f ) );
 
-        return Physics.RaycastAll( rayStartPosition, transform.TransformDirection( moveDirection ), 1.0f );
+        return Physics.RaycastAll( rayStartPosition, moveDirection, 1.0f );
     }
 
     public void StartedMoveInDirection( Vector3 moveDirection, bool pushAdjecent ) {
         RaycastHit[] hits = GetCollisionsInPath( moveDirection );
-
+        
         for ( int i = 0; i < hits.Length; ++i ) {
             if ( hits[i].transform.gameObject != gameObject ) {
                 GridMover mover = hits[i].transform.gameObject.GetComponent<GridMover>();
