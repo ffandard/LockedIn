@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 64429519743156404}
   - component: {fileID: 65498640188405212}
   - component: {fileID: 114408957902051518}
+  - component: {fileID: 114110308402438500}
   m_Layer: 8
   m_Name: Box
   m_TagString: Untagged
@@ -113,6 +114,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &114110308402438500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497357993453268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6745a8dee7c59684ca4bb86e84cdab8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.15
 --- !u!114 &114408957902051518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,6 +140,7 @@ MonoBehaviour:
   xSnapCoodrinate: 0
   ySnapCoodrinate: 0
   zSnapCoordinate: 0.5
+  ignoreY: 1
   collisionTestOffset: {x: 0, y: 0.5, z: 0}
   moveSpeed: 0.15
 --- !u!114 &114571309055830356

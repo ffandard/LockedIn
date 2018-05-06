@@ -8,6 +8,8 @@ public class GridMover : MonoBehaviour {
     public float ySnapCoodrinate = 0.5f;
     public float zSnapCoordinate = 0.5f;
 
+    public bool ignoreY = false;
+
     public Vector3 collisionTestOffset = new Vector3( 0.0f, 0.5f, 0.0f );
 
     public float moveSpeed = 0.15f;
@@ -35,7 +37,7 @@ public class GridMover : MonoBehaviour {
     private void SnapToGrid() {
         transform.position = new Vector3(
             Mathf.Sign( transform.position.x ) * ( Mathf.Abs( ( int )transform.position.x ) + xSnapCoodrinate ),
-            Mathf.Sign( transform.position.y ) * ( Mathf.Abs( ( int )transform.position.y ) + ySnapCoodrinate),
+            ignoreY ? transform.position.y : Mathf.Sign( transform.position.y ) * ( Mathf.Abs( ( int )transform.position.y ) + ySnapCoodrinate),
             Mathf.Sign( transform.position.z ) * ( Mathf.Abs( ( int )transform.position.z ) + zSnapCoordinate )
         );
 
@@ -47,6 +49,11 @@ public class GridMover : MonoBehaviour {
             shouldMove = true;
             targetPosition = transform.position + moveDirection;
             StartedMoveInDirection( moveDirection, pushAdjecent );
+
+            MatchGround matchGround = GetComponent<MatchGround>();
+            if ( matchGround != null ) {
+                matchGround.WillMoveTo( targetPosition );
+            }
         }
     }
 
