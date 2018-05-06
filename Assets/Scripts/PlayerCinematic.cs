@@ -9,19 +9,36 @@ public class PlayerCinematic : MonoBehaviour {
     public Camera cinematicCamera;
 
     public float lookSpeed;
-    public float disableTime;
+
+    public float successDelay = 2.0f;
+    public float failDelay = 1.0f;
 
     private bool isMoving = false;
+    private bool isReseting = false;
 
     private void Start() {
         Switch targetSwitch = GetComponent<Switch>();
         if ( targetSwitch != null ) {
             targetSwitch.OnSwitchPressed += RunCinematic;
         }
+
+        LockPinActivator lockActivator = GetComponent<LockPinActivator>();
+
+        lockActivator.FailedUnlock += () => Invoke( "ResetCamera", failDelay );
+        lockActivator.Unlocked += () => Invoke( "ResetCamera", successDelay );
     }
 
     public void Update() {
-        if ( isMoving ) {
+        if ( isReseting ) {
+            cinematicCamera.transform.rotation = Quaternion.Lerp( cinematicCamera.transform.rotation, playerCamera.transform.rotation, lookSpeed );
+
+            if ( cinematicCamera.transform.rotation == playerCamera.transform.rotation ) {
+                isReseting = false;
+                isMoving = false;
+
+                EnableMovement();
+            }
+        } else if ( isMoving ) {
             Quaternion targetLook = Quaternion.LookRotation( targetLookAt.position - cinematicCamera.transform.position );
             cinematicCamera.transform.rotation = Quaternion.Lerp( cinematicCamera.transform.rotation, targetLook, lookSpeed );
         }
@@ -31,9 +48,13 @@ public class PlayerCinematic : MonoBehaviour {
         player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
         playerCamera.enabled = false;
         cinematicCamera.enabled = true;
-        cinematicCamera.gameObject.transform.rotation = playerCamera.gameObject.transform.rotation;
 
-        Invoke( "EnableMovement", disableTime );
+        Transform playerCamTransform = playerCamera.gameObject.transform;
+        Transform cinematicTransform = cinematicCamera.gameObject.transform;
+
+        cinematicTransform.position = playerCamTransform.position;
+        cinematicTransform.rotation = playerCamTransform.rotation;
+
         isMoving = true;
     }
 
@@ -41,5 +62,9 @@ public class PlayerCinematic : MonoBehaviour {
         player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
         playerCamera.enabled = true;
         cinematicCamera.enabled = false;
+    }
+
+    private void ResetCamera() {
+        isReseting = true;
     }
 }
