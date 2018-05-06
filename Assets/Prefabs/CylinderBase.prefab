@@ -86,7 +86,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4171941051730154
 Transform:
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 16342205, guid: 0472bdc8d6d15384d98f22ee34302f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entityType: 0
+  _entityType: 4
 --- !u!114 &114140408267216678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,6 +350,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockPinActivator: {fileID: 0}
   lockAnimator: {fileID: 95349440476561166}
+  reparentTarget: {fileID: 4418294330729620}
+  parentOnSuccess:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114238322986124656
 MonoBehaviour:
   m_ObjectHideFlags: 1
