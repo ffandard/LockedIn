@@ -19,7 +19,7 @@ public class GridMoveToMax : MonoBehaviour {
 	void Update () {
 		if ( isMoving && !currentMover.IsMoving() ) {
             if ( currentMover.CanMoveInDirection( transform.TransformDirection( moveDirection ), true ) ) {
-                currentMover.Move( moveDirection, true );
+                currentMover.Move( moveDirection, true, false );
             } else {
                 isMoving = false;
 
