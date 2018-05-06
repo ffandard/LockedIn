@@ -26,6 +26,11 @@ public class LockPinActivator : ButtonActivation {
 
         Invoke( "DropPins", dropDelay );
         source.SetAllowToggle( false );
+
+		BeamActivator[] beams = FindObjectsOfType<BeamActivator> ();
+		foreach (BeamActivator beam in beams) {
+			beam.Reset ();
+		}
     }
 
     private void Start() {
