@@ -15,6 +15,16 @@ public class LockPinActivator : ButtonActivation {
         source.SetAllowToggle( false );
     }
 
+    private void Update() {
+        if ( Input.GetKeyDown( KeyCode.P ) ) {
+            DropPins();
+        }
+
+        if ( Input.GetKeyDown( KeyCode.R ) ) {
+            ResetLock();
+        }
+    }
+
     private void DropPins() {
         for ( int i = 0; i < Pistons.Length; ++i ) {
             Pistons[i].GetComponent<PositionResetter>().StorePosition();

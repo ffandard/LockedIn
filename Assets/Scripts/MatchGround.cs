@@ -16,12 +16,21 @@ public class MatchGround : MonoBehaviour {
         }
     }
 
-    public void WillMoveTo( Vector3 target ) {
+    public Vector3 WillMoveTo( Vector3 target ) {
         RaycastHit hit;
         if ( Physics.Raycast( target + new Vector3( 0.0f, 1.0f, 0.0f ), Vector3.down, out hit, 2.0f ) ) {
-            targetUp = hit.normal;
-            targetYOffset = transform.position.y + ( 1.0f - hit.distance );
-            interpToMatchGround = true;
+            return new Vector3( target.x, target.y + ( 1.0f - hit.distance ), target.z );
         }
+
+        return target;
+    }
+
+    public Vector3 GetUpVector( Vector3 target ) {
+        RaycastHit hit;
+        if ( Physics.Raycast( target + new Vector3( 0.0f, 1.0f, 0.0f ), Vector3.down, out hit, 2.0f ) ) {
+            return hit.normal;
+        }
+
+        return Vector3.up;
     }
 }
