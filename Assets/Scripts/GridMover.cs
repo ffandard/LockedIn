@@ -16,8 +16,9 @@ public class GridMover : MonoBehaviour {
     private bool shouldMove = false;
 
     private Vector3 targetPosition = new Vector3();
+    private Vector3 targetUp = new Vector3();
 
-	void Start () {
+    void Start () {
         SnapToGrid();
 
         targetPosition = transform.position;
@@ -26,6 +27,7 @@ public class GridMover : MonoBehaviour {
 	void Update () {
 	    if ( shouldMove ) {
             transform.position = Vector3.MoveTowards( transform.position, targetPosition, moveSpeed );
+            transform.up = Vector3.MoveTowards( transform.up, targetUp, moveSpeed );
 
             if ( targetPosition == transform.position ) {
                 SnapToGrid();
@@ -52,7 +54,8 @@ public class GridMover : MonoBehaviour {
 
             MatchGround matchGround = GetComponent<MatchGround>();
             if ( matchGround != null ) {
-                matchGround.WillMoveTo( targetPosition );
+                targetPosition = matchGround.WillMoveTo( targetPosition );
+                targetUp = matchGround.GetUpVector( targetPosition );
             }
         }
     }
