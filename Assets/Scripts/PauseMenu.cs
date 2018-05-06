@@ -16,30 +16,20 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void LoadMainMenu()
-    {
-        StartCoroutine(LoadMainMenuAsync());
-    }
-
-    public IEnumerator LoadMainMenuAsync()
-    {
-        AsyncOperation async = SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
-
-        while (!async.isDone)
-        {
-            yield return null;
-        }
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
     public void TogglePause(bool pause)
     {
         isPaused = pause;
         Cursor.visible = pause;
         pauseMenuContainer.SetActive(pause);
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
