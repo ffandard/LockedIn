@@ -18,7 +18,7 @@ public class GridMoveToMax : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if ( isMoving && !currentMover.IsMoving() ) {
-            if ( currentMover.CanMoveInDirection( moveDirection, true ) ) {
+            if ( currentMover.CanMoveInDirection( transform.TransformDirection( moveDirection ), true ) ) {
                 currentMover.Move( moveDirection, true );
             } else {
                 isMoving = false;
