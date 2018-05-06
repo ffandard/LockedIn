@@ -16,8 +16,6 @@ public class GridMover : MonoBehaviour {
     private Vector3 targetPosition = new Vector3();
     private Vector3 targetUp = Vector3.zero;
 
-    public GameObject test;
-
     void Start () {
         SnapToGrid();
 
@@ -33,16 +31,17 @@ public class GridMover : MonoBehaviour {
             }
 
             if ( targetPosition == transform.position ) {
+                transform.position = targetPosition;
                 SnapToGrid();
                 shouldMove = false;
             }
         }
     }
 
-    private void SnapToGrid() {
+    public void SnapToGrid() {
         transform.position = new Vector3(
             Mathf.Sign( transform.position.x ) * ( Mathf.Abs( ( int )transform.position.x ) + xSnapCoodrinate ),
-            ignoreY ? transform.position.y : Mathf.Sign( transform.position.y ) * ( Mathf.Abs( ( int )transform.position.y ) + ySnapCoodrinate),
+            ignoreY ? transform.position.y : ( Mathf.Sign( transform.position.y ) * ( Mathf.Abs( ( int )transform.position.y ) + ySnapCoodrinate) ),
             Mathf.Sign( transform.position.z ) * ( Mathf.Abs( ( int )transform.position.z ) + zSnapCoordinate )
         );
 
@@ -82,9 +81,6 @@ public class GridMover : MonoBehaviour {
                 if ( mover != null && pushAdjecent && mover.CanMoveInDirection( moveDirection, pushAdjecent ) && mover.GetComponent<GridMoveToMax>() == null ) {
                     return true;
                 }
-
-                if ( test != null )
-                    test.transform.position = hits[i].point;
 
                 return false;
             }
