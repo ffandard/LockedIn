@@ -4,10 +4,13 @@ using UnityEngine;
 using System;
 
 public class LockPinActivator : ButtonActivation {
+	public Animator animator;
+	public string triggerString;
     public GameObject[] Pistons;
     public GameObject[] Pillars;
     public float[] UnlockCombination;
     public float dropDelay = 1.0f;
+
 
     public delegate void OnUnlocked();
     public OnUnlocked Unlocked;
@@ -19,6 +22,8 @@ public class LockPinActivator : ButtonActivation {
     private bool isUnlocked = false;
     
     public override void OnActivated( Switch source ) {
+		animator.SetTrigger (triggerString);
+
         for ( int i = 0; i < Pistons.Length; ++i ) {
             Pistons[i].GetComponent<PositionResetter>().StorePosition();
             Pillars[i].GetComponent<PositionResetter>().StorePosition();
