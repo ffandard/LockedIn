@@ -16,6 +16,8 @@ public class GridMover : MonoBehaviour {
     private Vector3 targetPosition = new Vector3();
     private Vector3 targetUp = Vector3.zero;
 
+    public GameObject test;
+
     void Start () {
         SnapToGrid();
 
@@ -47,18 +49,20 @@ public class GridMover : MonoBehaviour {
         targetPosition = transform.position;
     }
 
-    public void Move( Vector3 moveDirection, bool pushAdjecent ) {
+    public void Move( Vector3 moveDirection, bool pushAdjecent, bool skipMatchPass ) {
         moveDirection = transform.TransformDirection( moveDirection );
 
         if ( !shouldMove && CanMoveInDirection( moveDirection, pushAdjecent ) ) {
             shouldMove = true;
             targetPosition = transform.position + moveDirection;
-            StartedMoveInDirection( moveDirection, pushAdjecent );
+            StartedMoveInDirection( moveDirection, pushAdjecent, skipMatchPass );
 
             MatchGround matchGround = GetComponent<MatchGround>();
-            if ( matchGround != null ) {
+            if ( matchGround != null && !skipMatchPass ) {
                 targetPosition = matchGround.WillMoveTo( targetPosition );
                 targetUp = matchGround.GetUpVector( targetPosition );
+            } else {
+                targetUp = Vector3.zero;
             }
         }
     }
@@ -78,6 +82,9 @@ public class GridMover : MonoBehaviour {
                 if ( mover != null && pushAdjecent && mover.CanMoveInDirection( moveDirection, pushAdjecent ) && mover.GetComponent<GridMoveToMax>() == null ) {
                     return true;
                 }
+
+                if ( test != null )
+                    test.transform.position = hits[i].point;
 
                 return false;
             }
@@ -108,7 +115,7 @@ public class GridMover : MonoBehaviour {
         return Physics.RaycastAll( rayStartPosition, moveDirection, 1.0f );
     }
 
-    public void StartedMoveInDirection( Vector3 moveDirection, bool pushAdjecent ) {
+    public void StartedMoveInDirection( Vector3 moveDirection, bool pushAdjecent, bool skipMatchPass ) {
         RaycastHit[] hits = GetCollisionsInPath( moveDirection );
         
         for ( int i = 0; i < hits.Length; ++i ) {
@@ -116,7 +123,21 @@ public class GridMover : MonoBehaviour {
                 GridMover mover = hits[i].transform.gameObject.GetComponent<GridMover>();
 
                 if ( mover != null ) {
-                    mover.Move( moveDirection, pushAdjecent );
+                    mover.Move( moveDirection, pushAdjecent, skipMatchPass );
+                }
+            }
+        }
+
+        // Move stuff on top too
+        if ( pushAdjecent ) {
+            hits = Physics.RaycastAll( transform.position, Vector3.up, 1.5f );
+
+            for ( int i = 0; i < hits.Length; ++i ) {
+                if ( hits[i].transform.gameObject != gameObject ) {
+                    GridMover mover = hits[i].transform.GetComponent<GridMover>();
+                    if ( mover != null ) {
+                        mover.Move( moveDirection, true, true );
+                    }
                 }
             }
         }

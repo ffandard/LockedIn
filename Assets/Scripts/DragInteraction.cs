@@ -32,15 +32,15 @@ public class DragInteraction : MonoBehaviour {
 
                 if ( Mathf.Abs( xDiff ) > 0.5f ) {
                     if ( xDiff < 0 ) {
-                        toMove.Move( Vector3.left, false );
+                        toMove.Move( Vector3.left, false, false );
                     } else {
-                        toMove.Move( Vector3.right, false );
+                        toMove.Move( Vector3.right, false, false );
                     }
                 } else if ( Mathf.Abs( zDiff ) > 0.5f ) {
                     if ( zDiff < 0 ) {
-                        toMove.Move( Vector3.back, false );
+                        toMove.Move( Vector3.back, false, false );
                     } else {
-                        toMove.Move( Vector3.forward, false );
+                        toMove.Move( Vector3.forward, false, false );
                     }
                 }
             }

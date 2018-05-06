@@ -29,6 +29,8 @@ public class LockPinActivator : ButtonActivation {
 
             component.MoveCompleted += PinDropped;
         }
+
+        Pillars[0].GetComponent<PositionResetter>().WasReset += () => GetComponent<Switch>().SetAllowToggle( true );
     }
 
     private void Update() {
