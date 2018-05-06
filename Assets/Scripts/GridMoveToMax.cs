@@ -22,7 +22,10 @@ public class GridMoveToMax : MonoBehaviour {
                 currentMover.Move( moveDirection, true );
             } else {
                 isMoving = false;
-                MoveCompleted();
+
+                if ( MoveCompleted != null ) {
+                    MoveCompleted();
+                }
             }
         }
 	}

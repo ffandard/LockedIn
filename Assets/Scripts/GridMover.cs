@@ -10,8 +10,6 @@ public class GridMover : MonoBehaviour {
 
     public bool ignoreY = false;
 
-    public Vector3 collisionTestOffset = new Vector3( 0.0f, 0.5f, 0.0f );
-
     public float moveSpeed = 0.15f;
     private bool shouldMove = false;
 
@@ -91,7 +89,7 @@ public class GridMover : MonoBehaviour {
         rayStartPosition.y += ( moveDirection.y * ( colliderBounds.extents.y - 0.04f ) );
         rayStartPosition.z += ( moveDirection.z * ( colliderBounds.extents.z - 0.04f ) );
 
-        return Physics.RaycastAll( rayStartPosition, moveDirection, 1.0f );
+        return Physics.RaycastAll( rayStartPosition, transform.TransformDirection( moveDirection ), 1.0f );
     }
 
     public void StartedMoveInDirection( Vector3 moveDirection, bool pushAdjecent ) {

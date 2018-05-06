@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &2036309 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1785899180733248, guid: 43da9d53a1a9beb409bc042d419122ad,
+    type: 2}
+  m_PrefabInternal: {fileID: 1447880778}
 --- !u!1 &106550346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3083,7 +3088,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3251,7 +3256,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-3944558
+  m_Name: pb_Mesh12792
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -3389,6 +3394,9 @@ GameObject:
   - component: {fileID: 175350337}
   - component: {fileID: 175350336}
   - component: {fileID: 175350335}
+  - component: {fileID: 175350341}
+  - component: {fileID: 175350342}
+  - component: {fileID: 175350343}
   m_Layer: 0
   m_Name: Piston (4)
   m_TagString: Untagged
@@ -10113,7 +10121,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -10146,6 +10154,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &175350341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 175350334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d61b9a5f162da4193f7579b344c814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSnapCoodrinate: 0
+  ySnapCoodrinate: 0.33
+  zSnapCoordinate: 0.5
+  ignoreY: 0
+  moveSpeed: 0.07
+--- !u!114 &175350342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 175350334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6743c4b210e355e45ae0a50e664d3f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &175350343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 175350334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02dcd7950ea4d424caef9c30b9833e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &214358199
 GameObject:
   m_ObjectHideFlags: 0
@@ -10259,6 +10305,9 @@ GameObject:
   - component: {fileID: 233284926}
   - component: {fileID: 233284925}
   - component: {fileID: 233284924}
+  - component: {fileID: 233284930}
+  - component: {fileID: 233284931}
+  - component: {fileID: 233284932}
   m_Layer: 0
   m_Name: Piston
   m_TagString: Untagged
@@ -16983,7 +17032,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -17016,6 +17065,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &233284930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233284923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d61b9a5f162da4193f7579b344c814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSnapCoodrinate: 0
+  ySnapCoodrinate: 0.33
+  zSnapCoordinate: 0.5
+  ignoreY: 0
+  moveSpeed: 0.07
+--- !u!114 &233284931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233284923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6743c4b210e355e45ae0a50e664d3f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &233284932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233284923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02dcd7950ea4d424caef9c30b9833e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &332651463
 GameObject:
   m_ObjectHideFlags: 0
@@ -17092,7 +17179,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-280544
+  m_Name: pb_Mesh-2470
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -17222,7 +17309,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh42502
+  m_Name: pb_Mesh12720
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -17347,6 +17434,11 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &545776891 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1674903851779834, guid: 25085b2e49120fd469591ccd2bf8d87a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1586060627}
 --- !u!1 &564435160
 GameObject:
   m_ObjectHideFlags: 0
@@ -17360,6 +17452,9 @@ GameObject:
   - component: {fileID: 564435163}
   - component: {fileID: 564435162}
   - component: {fileID: 564435161}
+  - component: {fileID: 564435167}
+  - component: {fileID: 564435168}
+  - component: {fileID: 564435169}
   m_Layer: 0
   m_Name: Piston (2)
   m_TagString: Untagged
@@ -24084,7 +24179,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -24117,12 +24212,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &564435167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 564435160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d61b9a5f162da4193f7579b344c814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSnapCoodrinate: 0
+  ySnapCoodrinate: 0.33
+  zSnapCoordinate: 0.5
+  ignoreY: 0
+  moveSpeed: 0.07
+--- !u!114 &564435168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 564435160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6743c4b210e355e45ae0a50e664d3f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &564435169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 564435160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02dcd7950ea4d424caef9c30b9833e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &581660408
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh13318
+  m_Name: pb_Mesh12776
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -24252,7 +24385,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh15394
+  m_Name: pb_Mesh12868
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -27985,9 +28118,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1337467422709912, guid: fc60149022f32dc45bc2db27618e7d3c, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: fc60149022f32dc45bc2db27618e7d3c, type: 2}
   m_IsPrefabParent: 0
 --- !u!43 &704003065
@@ -27995,7 +28129,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh40668
+  m_Name: pb_Mesh12694
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -28858,7 +28992,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -32416,9 +32550,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1674903851779834, guid: 25085b2e49120fd469591ccd2bf8d87a, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 25085b2e49120fd469591ccd2bf8d87a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &857306232
@@ -32434,6 +32569,9 @@ GameObject:
   - component: {fileID: 857306235}
   - component: {fileID: 857306234}
   - component: {fileID: 857306233}
+  - component: {fileID: 857306239}
+  - component: {fileID: 857306240}
+  - component: {fileID: 857306241}
   m_Layer: 0
   m_Name: Piston (1)
   m_TagString: Untagged
@@ -39158,7 +39296,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -39191,6 +39329,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &857306239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 857306232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d61b9a5f162da4193f7579b344c814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSnapCoodrinate: 0
+  ySnapCoodrinate: 0.33
+  zSnapCoordinate: 0.5
+  ignoreY: 0
+  moveSpeed: 0.07
+--- !u!114 &857306240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 857306232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6743c4b210e355e45ae0a50e664d3f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &857306241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 857306232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02dcd7950ea4d424caef9c30b9833e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &880998333
 GameObject:
   m_ObjectHideFlags: 0
@@ -41038,7 +41214,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -41088,7 +41264,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh40796
+  m_Name: pb_Mesh12902
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -41248,7 +41424,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh40702
+  m_Name: pb_Mesh12746
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -41434,12 +41610,17 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35e989656e9a92b44b7d2a7f96b20b7d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1047262605 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1674903851779834, guid: 25085b2e49120fd469591ccd2bf8d87a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154832995}
 --- !u!43 &1116094239
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-639480
+  m_Name: pb_Mesh-2390
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -45144,9 +45325,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1674903851779834, guid: 25085b2e49120fd469591ccd2bf8d87a, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 25085b2e49120fd469591ccd2bf8d87a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1156990782
@@ -70365,7 +70547,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -77702,9 +77884,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1785899180733248, guid: 43da9d53a1a9beb409bc042d419122ad, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 43da9d53a1a9beb409bc042d419122ad, type: 2}
   m_IsPrefabParent: 0
 --- !u!43 &1492769793
@@ -77712,7 +77895,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh13348
+  m_Name: pb_Mesh12806
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -77842,7 +78025,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-218570
+  m_Name: pb_Mesh-2430
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -77972,7 +78155,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh20556
+  m_Name: pb_Mesh12838
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -78110,6 +78293,9 @@ GameObject:
   - component: {fileID: 1557846946}
   - component: {fileID: 1557846945}
   - component: {fileID: 1557846944}
+  - component: {fileID: 1557846950}
+  - component: {fileID: 1557846951}
+  - component: {fileID: 1557846952}
   m_Layer: 0
   m_Name: Piston (3)
   m_TagString: Untagged
@@ -84834,7 +85020,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -84867,6 +85053,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1557846950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1557846943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d61b9a5f162da4193f7579b344c814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSnapCoodrinate: 0
+  ySnapCoodrinate: 0.33
+  zSnapCoordinate: 0.5
+  ignoreY: 0
+  moveSpeed: 0.07
+--- !u!114 &1557846951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1557846943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6743c4b210e355e45ae0a50e664d3f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1557846952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1557846943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02dcd7950ea4d424caef9c30b9833e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1586060627
 Prefab:
   m_ObjectHideFlags: 0
@@ -89677,7 +89901,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1674903851779834, guid: 25085b2e49120fd469591ccd2bf8d87a, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114013290364755298, guid: 25085b2e49120fd469591ccd2bf8d87a,
         type: 2}
@@ -89699,7 +89923,8 @@ Prefab:
       propertyPath: m_selectedTriangles.Array.data[1]
       value: 65
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 25085b2e49120fd469591ccd2bf8d87a, type: 2}
   m_IsPrefabParent: 0
 --- !u!43 &1626333754
@@ -89707,7 +89932,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh13230
+  m_Name: pb_Mesh12676
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -89832,6 +90057,11 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &1652997341 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1337467422709912, guid: fc60149022f32dc45bc2db27618e7d3c,
+    type: 2}
+  m_PrefabInternal: {fileID: 653890805}
 --- !u!43 &1740923287
 Mesh:
   m_ObjectHideFlags: 0
@@ -89962,6 +90192,11 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &1767687881 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1674903851779834, guid: 25085b2e49120fd469591ccd2bf8d87a,
+    type: 2}
+  m_PrefabInternal: {fileID: 778121264}
 --- !u!1001 &1772104811
 Prefab:
   m_ObjectHideFlags: 0
@@ -90237,7 +90472,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-639558
+  m_Name: pb_Mesh-2490
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -90497,7 +90732,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-218556
+  m_Name: pb_Mesh-2410
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -90627,7 +90862,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-280524
+  m_Name: pb_Mesh-2450
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -90887,7 +91122,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-577706
+  m_Name: pb_Mesh-2510
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -91062,6 +91297,7 @@ GameObject:
   - component: {fileID: 2033649464}
   - component: {fileID: 2033649463}
   - component: {fileID: 2033649465}
+  - component: {fileID: 2033649466}
   m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
@@ -91088,7 +91324,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2033649462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9850266, y: 0.036, z: -3.487}
+  m_LocalPosition: {x: 3, y: 1, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1284893182}
@@ -91108,13 +91344,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141d94183e61bc940a5c4b72e151983a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActivationHandler: {fileID: 0}
+  ActivationHandler: {fileID: 2033649466}
+--- !u!114 &2033649466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033649462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5a516e64051994c85789e7b5734a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pistons:
+  - {fileID: 233284923}
+  - {fileID: 857306232}
+  - {fileID: 564435160}
+  - {fileID: 1557846943}
+  - {fileID: 175350334}
+  Pillars:
+  - {fileID: 1767687881}
+  - {fileID: 1047262605}
+  - {fileID: 545776891}
+  - {fileID: 2036309}
+  - {fileID: 1652997341}
+  dropDelay: 1
 --- !u!43 &2035108469
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-280604
+  m_Name: pb_Mesh-2530
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
