@@ -12,6 +12,9 @@ public class LockPinActivator : ButtonActivation {
     public delegate void OnUnlocked();
     public OnUnlocked Unlocked;
 
+    public delegate void OnFailedUnlock();
+    public OnFailedUnlock FailedUnlock;
+
     private int pinsDropped = 0;
     private bool isUnlocked = false;
     
@@ -70,6 +73,10 @@ public class LockPinActivator : ButtonActivation {
             }
             else {
                 Invoke("ResetLock", dropDelay);
+
+                if (Unlocked != null) {
+                    FailedUnlock();
+                }
             }
         }
     }
